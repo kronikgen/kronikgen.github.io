@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+			<title>İsvicre Seyahati</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Your description">
+    <meta name="keywords" content="Your keywords">
+    <meta name="author" content="Your name">
+    <link rel="stylesheet" href="css/stilim.css" />
+     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+   	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-migrate-1.1.1.js"></script>
+    <script src="js/bgstretcher.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]--></head>
+	<body>
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">İSVİCREDENERESİ</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="index.html">Anasayfa</a></li>
+											<li><a href="index-1.html">Gündem</a></li>
+											<li><a href="index-2.html">Resimler</a></li>
+											<li><a href="index-3.html">Giriş</a></li>
+											<li><a href="index-4.html">Slider</a></li>
+                                            <li><a href="index-5.html">Kişi Sorgula</a></li>
+                                             <li><a href="index-6.html">Kişi Sırala</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>Gündem</h2>
+							<p>İsviCreye gittiğinizde lazım olabilecekler </p>
+						</header>
+						<section class="wrapper style5">
+							<div class="inner">
+
+								<h3>Haberler</h3>
+								 <iframe src="https://www.cnnturk.com/news/embed_v2/haberler/650x550?p=yasam" width="850" height="450" frameborder="0"></iframe> 
+								<hr />
+
+								<h4>Yapılacak Listesi</h4>
+								<script>
+						var app = angular.module("yapilacak", []); 
+						app.controller("myCtrl", function($scope) {
+							$scope.products = ["Çikolata ye", "Başkenti gez", "Hediye al"];
+							$scope.addItem = function () {
+								$scope.errortext = "";
+								if (!$scope.addMe) {return;}
+								if ($scope.products.indexOf($scope.addMe) == -1) {
+									$scope.products.push($scope.addMe);
+								} else {
+									$scope.errortext = "Bu zaten listede var !";
+								}
+							}
+							$scope.removeItem = function (x) {
+								$scope.errortext = "";
+								$scope.products.splice(x, 1);
+							} 
+						});
+						</script>
+						
+						<div ng-app="yapilacak" ng-controller="myCtrl">
+							<ul>
+								<li ng-repeat="x in products">
+									{{x}}
+									<span ng-click="removeItem($index)">&times;</span>
+								</li>
+							</ul>
+							<input style="font-family: Tahoma; font-size: 12px; color:#000;"ng-model="addMe">
+							<button ng-click="addItem()">Ekle</button>
+							<p>{{errortext}}</p>
+								</div>
+                            </div>	
+                                
+							</div>
+						</section>
+					</article>
+
+				<!-- Footer -->
+					<footer id="footer">
+					
+						<ul class="copyright">
+							<li>&copy; Untitled</li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
